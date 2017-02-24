@@ -4,13 +4,16 @@ import java.util.Arrays;
 
 
 /**
-* @author Siddharth
+* Java program to Sort integer array using QuickSort algorithm using recursion.
+* Recursive QuickSort algorithm, partitioned list into two parts by a pivot,
+* and then recursively sorts each list.
+* @author Javin Paul
 */
 public class QuickSort{
 
     public static void main(String args[]) {
 
-        int[] input = {35, 33, 42, 10, 14, 19, 27, 44, 26, 31};
+        int[] input = { 23, 31, 1, 21, 36, 72};
         System.out.println("Before sorting : " + Arrays.toString(input));
         quickSort(input); // sort the integer array using quick sort algorithm
         System.out.println("After sorting : " + Arrays.toString(input));
@@ -41,7 +44,6 @@ public class QuickSort{
     public static void recursiveQuickSort(int[] array, int startIdx, int endIdx) {
      
         int idx = partition(array, startIdx, endIdx);
-        System.out.println(Arrays.toString(array));
 
         // Recursively call quicksort with left part of the partitioned array
         if (startIdx < idx - 1) {
@@ -65,7 +67,6 @@ public class QuickSort{
      */
     public static int partition(int[] array, int left, int right) {
         int pivot = array[left]; // taking first element as pivot
-        left++;
 
         while (left <= right) {
             //searching number which is greater than pivot, bottom up
@@ -78,10 +79,6 @@ public class QuickSort{
             }
 
             // swap the values
-            System.out.println(left);
-
-            System.out.println(right);
-            System.out.println(Arrays.toString(array));
             if (left <= right) {
                 int tmp = array[left];
                 array[left] = array[right];
@@ -92,11 +89,6 @@ public class QuickSort{
                 right--;
             }
         }
-    	System.out.println(Arrays.toString(array));
-    	System.out.println(right);
-    	int tmp = array[right];
-        array[right] = pivot;
-        array[0] = tmp;
         return left;
     }
 }
