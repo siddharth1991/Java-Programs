@@ -45,3 +45,8 @@ public class MinimumJumpsWithFee{
          System.out.println(minimumJumps);
      }
 }
+
+/*
+Time Complexity: O(3^n);
+Space Complexity: O(n);
+*/
