@@ -1,3 +1,6 @@
+/*Given a string, find the total number of palindromic substrings in it. Please note we need to find the total number of substrings and not subsequences.
+*/
+
 import java.util.*
 
 class CountOfPalindromicSubsequence {
